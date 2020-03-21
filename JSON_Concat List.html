@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<p id="user"></p>
+
+Add items <input type="text" name="item" id="item" value=""><br/><br/>
+
+<input type="button" name="AddItem" title="Add Item" value="Add Item" onclick="AddItem()">
+
+<script>
+
+var obj = ["Default Item"];
+
+var concatStr = "0. "+obj[0];
+
+function AddItem()
+{
+	concatStr = "";
+	var val = document.getElementById("item").value;
+
+	obj = obj.concat([
+		val
+	]);
+
+	document.getElementById("item").value =  "";
+	
+	for (var i=0; i<obj.length; i++) {
+		var counter = obj[i];
+		concatStr = concatStr + i +"." + counter+"<BR/>";
+	}
+	document.getElementById("user").innerHTML = "";
+	document.getElementById("user").innerHTML = concatStr;
+}
+
+document.getElementById("user").innerHTML = concatStr;
+
+</script>
+
+</body>
+</html>

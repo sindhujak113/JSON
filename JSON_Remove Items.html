@@ -1,0 +1,38 @@
+<!DOCTYPE HTML> 
+<html> 
+<body style="text-align:center;"> 
+	<p id="firstHolder"></p> 
+
+	<button onclick="runDel()"> 
+		Click Here 
+	</button> 
+	<p id="secondHolder"
+	style="color:green;"> 
+	</p> 
+	<script> 
+		var first = document.getElementById("firstHolder"); 
+		var second = document.getElementById("secondHolder"); 
+		var arr = [{ 
+			a: 'Val_1', 
+			b: 'Val_2' 
+		}, { 
+			a: 'Val_3', 
+			b: 'Val_4' 
+		}, { 
+			a: 'Val_1', 
+			b: 'Val_2' 
+		}]; 
+		first.innerHTML = "Click on the button to delete" 
+			+ " first property/entry of the list object.<br>Array - " 
+			+ JSON.stringify(arr); 
+
+		function runDel() { 
+			arr.forEach(function(obj) { 
+				delete obj.a 
+			}); 
+			second.innerHTML = JSON.stringify(arr); 
+		} 
+	</script> 
+</body> 
+
+</html>
